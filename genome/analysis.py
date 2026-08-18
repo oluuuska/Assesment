@@ -37,7 +37,7 @@ def _resolve_actors(df, actor_countries):
 
 
 def calculate_stats_and_ma(df, actor_countries):
-    """Attach a 30-day moving average of weight per actor and print summary stats."""
+    """Attach a 7-day moving average of weight per actor and print summary stats."""
     actors = _resolve_actors(df, actor_countries)
     stats_dict = {}
 
@@ -52,7 +52,7 @@ def calculate_stats_and_ma(df, actor_countries):
             sub_df = sub_df.sort_values("event_date")
             roll = (
                 sub_df.set_index("event_date")
-                .rolling("30D", min_periods=1)["weight"]
+                .rolling("7D", min_periods=1)["weight"]
                 .mean()
             )
             sub_df[ma_col_name] = roll.values
