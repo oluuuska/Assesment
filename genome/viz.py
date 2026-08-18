@@ -32,7 +32,7 @@ def render_blue_html_window(captured_text):
 
 
 def plot_data(df, actor_countries):
-    """Plot the 30-day moving average of event weight for each actor."""
+    """Plot the 7-day moving average of event weight for each actor."""
     plt.figure(figsize=(12, 6))
     plot_df = df.sort_values("event_date")
 
@@ -48,7 +48,7 @@ def plot_data(df, actor_countries):
                 )
 
     plt.axhline(y=0, color="black", linestyle="--", linewidth=0.8, alpha=0.7)
-    plt.title("30-Day Moving Average of Event Weight by Country")
+    plt.title("7-Day Moving Average of Event Weight by Country")
     plt.xlabel("Event Date")
     plt.ylabel("Moving Average of Weight")
     plt.xticks(rotation=45)
