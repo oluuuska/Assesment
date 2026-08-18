@@ -8,7 +8,7 @@ from statsmodels.tsa.stattools import coint, adfuller
 
 # A cointegration test on a handful of points is meaningless. Require a
 # reasonable number of overlapping observations before trusting a result.
-MIN_OBS_FOR_COINT = 20
+MIN_OBS_FOR_COINT = 5
 
 ACTOR_COL = "_queried_actor"
 
